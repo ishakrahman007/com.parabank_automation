@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="www.para_bank.com test">
+
+  <!--  <parameter name="useCloudEnv" value="false"></parameter>
+    <parameter name="envName" value="browserstack"></parameter>
+    <parameter name="os" value="windows"></parameter>
+    <parameter name="osVersion" value="10"></parameter>
+    <parameter name="browserVersion" value="110"></parameter>   -->
+
+    <parameter name="browserName" value="chrome"></parameter>
+    <parameter name="url"
+               value="https://parabank.parasoft.com/parabank/index.htm;jsessionid=CEDAA8CC9DFC6B1F0786088AD7172043"></parameter>
+
+    <test name="Para Bank Test Cases">
+        <groups>
+            <define name="OvernightTest">
+                <include name="Smoke"></include>
+                <include name="Sanity"></include>
+                <include name="Integration"></include>
+            </define>
+            <define name="DaytimeTes">
+                <include name="Smoke"></include>
+                <include name="Sanity"></include>
+                <include name="Integration"></include>
+            </define>
+
+            <run>
+                <include name="before"></include>
+                <include name="after"></include>
+                <!--    <include name="DaytimeTes"></include> -->
+                 <!--   <include name="OvernightTest"></include> -->
+                 <!--                <exclude name="Integration"></exclude>-->
+                <!--                <exclude name="Sanity"></exclude>-->
+                <!--                <exclude name="Smoke"></exclude>-->
+
+            </run>
+        </groups>
+        <classes>
+            <class name="para_bank_test.SignupTest"></class>
+            <class name="para_bank_test.LoginTest"></class>
+        </classes>
+    </test>
+</suite>
