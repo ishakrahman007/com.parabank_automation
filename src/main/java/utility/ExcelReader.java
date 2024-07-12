@@ -142,7 +142,7 @@ public class ExcelReader {
     @DataProvider(name = "checkoutForGuestUsers")
     public static Object[][] getData() {
         String currentDir = System.getProperty("user.dir");
-        String path = currentDir+File.separator+"data"+File.separator+"Book1.xlsx";
+        String path = currentDir+File.separator+"data"+File.separator+"";
         System.out.println(path);
         ExcelReader excelReader = new ExcelReader(path);
         List<String> items1 = excelReader.getEntireColumnDataFromExcelSheet("CheckoutDataProvider",1,1);

@@ -118,9 +118,9 @@ public class CommonClass {
             cap.setCapability("browser_version", browserVersion);
             if (envName.equalsIgnoreCase("browserstack")){
                 cap.setCapability("resolution", "1920x1080");
-                driver = new RemoteWebDriver(new URL("http://"+username+":"+password+"@hub-cloud.browserstack.com:80/wd/hub"),cap);
-            } else if (envName.equalsIgnoreCase("saucelabs")) {
-                driver = new RemoteWebDriver(new URL("http://"+username+":"+password+"@ondemand.saucelabs.com:80/wd.hub"),cap);
+                driver = new RemoteWebDriver(new URL("http://"+username+":"+password+""),cap);
+            } else if (envName.equalsIgnoreCase("")) {
+                driver = new RemoteWebDriver(new URL("http://"+username+":"+password+""),cap);
             }
         }
 
